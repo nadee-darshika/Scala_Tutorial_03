@@ -5,9 +5,9 @@ val extraShipCost = 0.75;
 
 def wholeSaleCost(n : Int) : Double = {
   if ( n > 50)
-    return coverPrice * (1 - discount) + ((normalShipCost*50) + (extraShipCost*(n-50)));
+    return coverPrice * (1 - discount)*n + (normalShipCost + (extraShipCost*(n-50)));
   else
-    return coverPrice * (1 - discount) + (normalShipCost*n);
+    return coverPrice * (1 - discount)*n + (normalShipCost);
 }
 
 println(wholeSaleCost(60));
